@@ -1,0 +1,138 @@
+/* src/Projects.css */
+.projects {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects h2 {
+  font-size: 4rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.project-card {
+  flex: 1 1 calc(33.33% - 1px);
+  background-color: #f9f9f9;
+  padding: 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 20px;
+  position: relative;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: white;
+}
+
+.github-button {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  background: #020202;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: 0.35s ease all;
+  overflow: hidden;
+  max-width: 22px; /* icon size */
+}
+
+.demo-button {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  background: #68009d;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: 0.35s ease all;
+  overflow: hidden;
+  max-width: 22px; /* icon size */
+}
+
+.demo-button-label {
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0 8px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: 0.25s ease all;
+}
+
+.github-button-label {
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0 8px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: 0.25s ease all;
+}
+
+.project-card:hover {
+  .demo-button {
+    max-width: 100%;
+  }
+
+  .github-button-label {
+    opacity: 1;
+    transform: translateX(0);
+    transition: 0.25s 0.1s ease-in opacity,
+      0.15s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) transform;
+  }
+
+  .github-button {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .demo-button-label {
+    opacity: 1;
+    transform: translateX(0);
+    transition: 0.25s 0.1s ease-in opacity,
+      0.15s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) transform;
+  }
+}
+
+.project-card h3 {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .project-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    flex: 1 1 100%;
+  }
+}

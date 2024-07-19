@@ -1,0 +1,94 @@
+/* src/Header.css */
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: #333; /* Darker text color */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  flex: 1;
+}
+.header-left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 42px; /* Adjusted for smaller screens */
+  font-weight: 600;
+  justify-content: center;
+}
+
+.header-right {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+}
+
+.header-right button {
+  background-color: white;
+  text-decoration: none;
+  border-radius: 2rem;
+  color: black;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 25px;
+  border: none;
+}
+
+.header-right button:hover {
+  background-color: #3d3d3d; /* Darker shade on hover */
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-left h1 {
+    font-size: 24px; /* Smaller font size for smaller screens */
+    margin: 10px 0;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: left; /* Center buttons on smaller screens */
+    margin-top: 10px;
+  }
+
+  .header-right button {
+    font-size: 14px; /* Smaller font size for smaller screens */
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 15px;
+  }
+
+  .header-left h1 {
+    font-size: 20px; /* Even smaller font size for very small screens */
+  }
+
+  .header-right button {
+    font-size: 12px; /* Adjusted for very small screens */
+    padding: 6px 12px;
+  }
+}
