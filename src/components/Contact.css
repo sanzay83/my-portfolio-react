@@ -6,12 +6,13 @@
 }
 
 .contact-left {
-  padding: 40px;
+  padding: 10% 40px;
   flex-direction: column;
   justify-content: center;
 }
 
 .contact-title {
+  margin-top: 140px;
   font-size: 2.5em;
   color: #333;
   margin-bottom: 10px;
@@ -43,9 +44,7 @@
 }
 
 .contact-image {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
+import proImage from "../assets/san.JPG";
 
 const Header = ({ scrollTo }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -23,14 +24,7 @@ const Header = ({ scrollTo }) => {
     <header className="header">
       <div className="header-left">
         <h1>
-          {scrolled ? (
-            <img
-              src="https://sanjayduwal.com/assets/profilepic.JPG"
-              alt="Sanjay Duwal"
-            />
-          ) : (
-            ""
-          )}
+          {scrolled ? <img src={proImage} alt="Sanjay Duwal" /> : ""}
           Sanjay Duwal
         </h1>
       </div>

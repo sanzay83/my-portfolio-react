@@ -2,14 +2,14 @@
 .tech-stacks {
   padding: 20px;
   max-width: 1200px;
-  margin: 140px auto;
+  margin: 140px auto 10px;
 }
 
 .tech-stacks h2 {
   font-size: 4rem;
   color: #555;
   text-align: center;
-  margin-bottom: 120px;
+  margin: 120px 0px;
 }
 
 .cards {
