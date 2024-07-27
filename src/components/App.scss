@@ -108,18 +108,14 @@ button {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .header-right {
     width: 100%;
-    justify-content: left; /* Center buttons on smaller screens */
+    justify-content: right; /* Center buttons on smaller screens */
     margin-top: 10px;
   }
 
   .header-right button {
+    display: none;
     padding: 8px 16px;
   }
 }
