@@ -1,6 +1,6 @@
 // src/ProfileCard.js
 import React from "react";
-import "./ProfileCard.css";
+import "./ProfileCard.scss";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import proImage from "../assets/san.JPG";
 

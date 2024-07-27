@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import "./Projects.css";
+import "./Projects.scss";
 import { FaGithub } from "react-icons/fa";
 import inari from "../assets/images/inari.png";
 import adquiz from "../assets/images/adquiz.png";
@@ -35,7 +35,7 @@ const Projects = forwardRef((props, ref) => {
   ];
   return (
     <div className="projects" ref={ref} id={props.id}>
-      <h2>Projects</h2>
+      <h1>Projects</h1>
       <div className="project-cards">
         {projectsData.map((project, index) => (
           <div className="project-card" key={index}>

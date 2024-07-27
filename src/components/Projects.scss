@@ -1,30 +1,24 @@
 /* src/Projects.css */
 .projects {
   padding: 20px;
+  padding-top: 160px;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.projects h2 {
-  font-size: 4rem;
-  color: #555;
-  text-align: center;
-  margin: 120px 0px;
 }
 
 .project-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 50px;
 }
 
 .project-card {
   flex: 1 1 calc(33.33% - 1px);
-  background-color: #f9f9f9;
-  padding: 1px;
+  margin: 10px;
+  padding: 0px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: white;
-  border-radius: 20px;
+  border-radius: 30px;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
   position: relative;
 }
 
@@ -35,7 +29,7 @@
 
 .project-card a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .github-button {
@@ -44,14 +38,13 @@
   left: 16px;
   display: flex;
   align-items: center;
-  background: #020202;
-  color: white;
   padding: 8px 10px;
   border-radius: 50px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   transition: 0.35s ease all;
   overflow: hidden;
   max-width: 22px; /* icon size */
+  background-color: white;
 }
 
 .demo-button {
@@ -60,14 +53,14 @@
   right: 16px;
   display: flex;
   align-items: center;
-  background: #68009d;
-  color: white;
   padding: 8px 10px;
   border-radius: 50px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   transition: 0.35s ease all;
   overflow: hidden;
-  max-width: 22px; /* icon size */
+  max-width: 22px;
+
+  background-color: white;
 }
 
 .demo-button-label {
@@ -77,6 +70,7 @@
   opacity: 0;
   transform: translateX(10px);
   transition: 0.25s ease all;
+  color: black;
 }
 
 .github-button-label {
@@ -89,6 +83,8 @@
 }
 
 .project-card:hover {
+  transform: scale(1.1);
+  transition: all 1s ease-in-out;
   .demo-button {
     max-width: 100%;
   }
@@ -115,13 +111,11 @@
 
 .project-card h3 {
   font-size: 24px;
-  color: #007bff;
   margin-bottom: 10px;
 }
 
 .project-card p {
   font-size: 16px;
-  color: #555;
 }
 
 /* Responsive Styles */

@@ -1,0 +1,135 @@
+@import "./main.scss";
+.App {
+  text-align: center;
+  background-color: $lightcolor;
+  transition: background-color 1s ease;
+}
+
+.dark {
+  color: $lightcolor;
+  background-color: $dark-color;
+  transition: background-color 1s ease;
+}
+
+.dark button {
+  color: $lightcolor;
+  background-color: $dark-color;
+  transition: background-color 1s ease;
+}
+button {
+  background-color: $lightcolor;
+  transition: background-color 1s ease;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: $lightcolor;
+  transition: background-color 1s ease;
+}
+
+.dark .header {
+  background-color: $dark-color;
+  transition: background-color 1s ease;
+}
+
+.header-left {
+  flex: 1;
+  justify-content: center;
+}
+.header-left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.header-right {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-right button {
+  text-decoration: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.header-right button:hover {
+  text-decoration: underline;
+}
+
+.header-right .dark-mode-button {
+  position: relative;
+  top: 0;
+  left: 0;
+  min-width: 50px;
+  height: 25px;
+  background-color: #8a8a8a;
+  border-radius: 17px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header-right .dark-mode-button .on {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff4b4b;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  transform: translateX(26px);
+}
+
+.header-right .dark-mode-button .off {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff4b4b;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: left; /* Center buttons on smaller screens */
+    margin-top: 10px;
+  }
+
+  .header-right button {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 15px;
+  }
+
+  .header-right button {
+    padding: 6px 12px;
+  }
+}

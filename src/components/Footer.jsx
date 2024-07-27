@@ -3,9 +3,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer>
-      <p>Copyright &copy; 2024 Sanjay Duwal. All Rights Reserved.</p>
-    </footer>
+    <div style={{ paddingBottom: "10px" }}>
+      <h3>Copyright &copy; 2024 Sanjay Duwal. All Rights Reserved.</h3>
+    </div>
   );
 };
 

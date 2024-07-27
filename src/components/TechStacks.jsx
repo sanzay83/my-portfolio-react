@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import "./TechStacks.css";
+import "./TechStacks.scss";
 import htmlicon from "../assets/icons/html.svg";
 import cssicon from "../assets/icons/css.svg";
 import javascripticon from "../assets/icons/javascript.svg";
@@ -88,7 +88,7 @@ const TechStacks = forwardRef((props, ref) => {
 
   return (
     <div className="tech-stacks" ref={ref} id={props.id}>
-      <h2>Tech Stacks</h2>
+      <h1>Tech Stacks</h1>
       <div className="cards">
         {stacks.map((stack, index) => (
           <div className="card" key={index}>

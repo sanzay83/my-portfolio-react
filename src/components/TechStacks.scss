@@ -1,34 +1,24 @@
 /* src/TechStacks.css */
 .tech-stacks {
-  padding: 20px;
+  padding: 160px 40px 40px 40px;
   max-width: 1200px;
   margin: 140px auto 10px;
-}
-
-.tech-stacks h2 {
-  font-size: 4rem;
-  color: #555;
-  text-align: center;
-  margin: 120px 0px;
 }
 
 .cards {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 50px;
 }
 
 .card {
   flex: 1;
-  background-color: #f9f9f9;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
 }
 
 .card h3 {
-  font-size: 2rem;
-  color: #424242;
   margin-bottom: 15px;
   text-align: left;
 }

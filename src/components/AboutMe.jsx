@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import "./AboutMe.css"; // Import CSS for styling
+import "./AboutMe.scss"; // Import CSS for styling
 
 const AboutMe = forwardRef((props, ref) => {
   return (

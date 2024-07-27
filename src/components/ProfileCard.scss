@@ -19,6 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(94, 93, 93);
 }
 
 .profile-image img {
@@ -27,44 +28,12 @@
   object-fit: cover;
 }
 
-.profile-text h1 {
-  margin: 0;
-  font-size: 18px;
-  color: #333;
-}
-
-.profile-text h2 {
-  margin: 10px 0;
-  font-size: 22px;
-  color: #555;
-}
-
-.profile-text p {
-  margin: 0;
-  font-size: 14px;
-  color: #777;
-}
-
-.buttons {
-  margin: 20px 0;
-  gap: 1rem;
-}
-
 .buttons button {
-  background-color: #000000;
   font-weight: 600;
-  color: white;
   margin: 5px;
   padding: 1rem;
   cursor: pointer;
   border-radius: 2rem;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.buttons button:hover {
-  background-color: #ffffff;
-  color: black;
 }
 
 .social-icons {
@@ -72,16 +41,10 @@
 }
 
 .social-icons a {
-  color: #333;
   font-size: 20px;
   margin: 0 10px;
   text-decoration: none;
   transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  background-color: black;
-  color: #ffffff;
 }
 
 /* Responsive Styles */
@@ -96,25 +59,5 @@
     width: 50vh;
     height: 50vh;
     margin: 0 20px;
-  }
-
-  .profile-text h1 {
-    font-size: 20px;
-  }
-
-  .profile-text h2 {
-    font-size: 44px;
-  }
-
-  .profile-text p {
-    font-size: 26px;
-  }
-
-  .buttons button {
-    font-size: 16px;
-  }
-
-  .social-icons a {
-    font-size: 24px;
   }
 }
