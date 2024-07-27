@@ -56,10 +56,10 @@ function App() {
         </div>
         <div className="header-right">
           <button onClick={() => scrollToSection("aboutSection")}>
-            About Me
+            AboutMe
           </button>
           <button onClick={() => scrollToSection("techStacksSection")}>
-            Tech Stacks
+            TechStacks
           </button>
           <button onClick={() => scrollToSection("projectsSection")}>
             Projects

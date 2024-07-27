@@ -1,6 +1,10 @@
 $lightcolor: rgb(221, 221, 221);
 $dark-color: rgb(29, 29, 29);
 
+body {
+  font-family: "Courier New", monospace;
+}
+
 h1 {
   font-size: 42px;
 }
@@ -12,6 +16,12 @@ button {
   font-size: 25px;
 }
 
+.main-container {
+  padding: 160px 40px 40px 40px;
+  max-width: 1200px;
+  margin: 140px auto 10px;
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 32px;
@@ -20,19 +30,27 @@ button {
   h2 {
     font-size: 25px;
   }
-  h3 {
+  h3,
+  button {
     font-size: 18px;
+  }
+
+  .main-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 25px;
+    font-size: 22px;
   }
   h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
-  h3 {
-    font-size: 15px;
+  h3,
+  button {
+    font-size: 14px;
   }
 }

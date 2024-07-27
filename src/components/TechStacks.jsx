@@ -87,7 +87,7 @@ const TechStacks = forwardRef((props, ref) => {
   ];
 
   return (
-    <div className="tech-stacks" ref={ref} id={props.id}>
+    <div className="main-container" ref={ref} id={props.id}>
       <h1>Tech Stacks</h1>
       <div className="cards">
         {stacks.map((stack, index) => (

@@ -34,7 +34,7 @@ const Projects = forwardRef((props, ref) => {
     },
   ];
   return (
-    <div className="projects" ref={ref} id={props.id}>
+    <div className="main-container" ref={ref} id={props.id}>
       <h1>Projects</h1>
       <div className="project-cards">
         {projectsData.map((project, index) => (

@@ -1,22 +1,21 @@
 /* src/ProfileCard.css */
 .profile-card {
-  height: 83vh;
-  margin: 0 auto;
+  padding: 40px;
+  padding-top: 160px;
+  max-width: 1200px;
+  margin: 10px auto 10px;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  padding: 20px;
-  flex-direction: column; /* Stack items vertically on smaller screens */
-  text-align: center; /* Center text on smaller screens */
   justify-content: center;
+  gap: 20px;
 }
 
 .profile-image {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto; /* Center the image horizontally */
+  flex: 1 1;
+  max-height: 300px;
+  max-width: 300px;
   border-radius: 50%;
-  overflow: hidden;
-  display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(94, 93, 93);
@@ -25,6 +24,7 @@
 .profile-image img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   object-fit: cover;
 }
 
@@ -48,16 +48,14 @@
 }
 
 /* Responsive Styles */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .profile-card {
-    flex-direction: row; /* Stack items side by side on larger screens */
+    flex-direction: column;
     padding: 40px;
-    gap: 4rem;
   }
 
   .profile-image {
-    width: 50vh;
-    height: 50vh;
-    margin: 0 20px;
+    width: 180px;
+    height: 184px;
   }
 }

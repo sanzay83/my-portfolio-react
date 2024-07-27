@@ -3,7 +3,7 @@ import "./AboutMe.scss"; // Import CSS for styling
 
 const AboutMe = forwardRef((props, ref) => {
   return (
-    <div className="main-container-about-me" ref={ref} id={props.id}>
+    <div className="main-container" ref={ref} id={props.id}>
       <h3>Get to know me</h3>
       <h1 className="title">About Me</h1>
       <div className="about-me">
@@ -28,7 +28,7 @@ const AboutMe = forwardRef((props, ref) => {
         </section>
       </div>
       <div className="about-me">
-        <div className="p1">
+        <div className="about-me-text">
           I am a passionate software engineer with a strong background in web
           development and a keen interest in solving complex problems. I enjoy
           working on innovative projects and continuously learning new
