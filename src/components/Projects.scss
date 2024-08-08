@@ -1,11 +1,10 @@
 .project-cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
 }
 
 .project-card {
-  flex: 1 1 calc(33.33% - 1px);
   margin: 10px;
   padding: 0px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -112,13 +111,13 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .project-card {
-    flex: 1 1 calc(50% - 20px);
+  .project-cards {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .project-card {
-    flex: 1 1 100%;
+  .project-cards {
+    grid-template-columns: 1fr;
   }
 }

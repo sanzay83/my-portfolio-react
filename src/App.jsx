@@ -48,12 +48,10 @@ function App() {
   return (
     <div className={`App ${isDark ? "dark" : ""}`}>
       <header className="header">
-        <div className="header-left">
-          <h1>
-            {scrolled ? <img src={proImage} alt="Sanjay Duwal" /> : ""}
-            Sanjay Duwal
-          </h1>
+        <div className="hiddenImage">
+          {scrolled ? <img src={proImage} alt="Sanjay Duwal" /> : ""}
         </div>
+        <div className="header-left">Sanjay Duwal</div>
         <div className="header-right">
           <button onClick={() => scrollToSection("aboutSection")}>
             AboutMe

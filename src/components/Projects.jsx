@@ -5,6 +5,8 @@ import inari from "../assets/images/inari.png";
 import adquiz from "../assets/images/adquiz.png";
 import library from "../assets/images/library.png";
 import isa from "../assets/images/isa.jpg";
+import relaxingsound from "../assets/images/relaxingsound.jpg";
+import timer from "../assets/images/timer.jpg";
 
 const Projects = forwardRef((props, ref) => {
   const projectsData = [
@@ -25,6 +27,18 @@ const Projects = forwardRef((props, ref) => {
       alt: "library",
       github: "https://github.com/sanzay83/library",
       demo: "https://sanjayduwal.com/o/library/",
+    },
+    {
+      image: relaxingsound,
+      alt: "relaxingsound",
+      github: "https://github.com/sanzay83/relaxing-sound",
+      demo: "https://relaxingsound.sanjayduwal.com/",
+    },
+    {
+      image: timer,
+      alt: "timer",
+      github: "",
+      demo: "https://timer.sanjayduwal.com/",
     },
     {
       image: isa,

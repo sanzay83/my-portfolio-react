@@ -11,9 +11,9 @@ const ProfileCard = ({ scrollTo }) => {
         <img src={proImage} alt="Sanjay Duwal" />
       </div>
       <div className="profile-text">
-        <h1>Hello, I'm</h1>
-        <h2>Sanjay Duwal</h2>
-        <p>Software Engineer</p>
+        <h2>Hello, I'm</h2>
+        <h1>Sanjay Duwal</h1>
+        <h3>Software Engineer</h3>
         <div className="buttons">
           <a href="https://sanjayduwal.com/assets/resume.pdf">
             <button>Download CV</button>

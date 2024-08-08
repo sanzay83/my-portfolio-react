@@ -22,7 +22,8 @@ button {
 }
 
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr 5fr;
   align-items: center;
   padding: 20px;
   position: sticky;
@@ -37,16 +38,19 @@ button {
   transition: background-color 1s ease;
 }
 
-.header-left {
-  flex: 2 1;
-  justify-content: center;
-}
-.header-left img {
-  width: 40px;
-  height: 40px;
+.hiddenImage img {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
   margin-right: 10px;
+}
+
+.header-left {
+  font-size: 2.1rem;
+  font-weight: 800;
+
+  text-align: left;
 }
 
 .header-right {
@@ -110,6 +114,10 @@ button {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+
   .header-right {
     width: 100%;
     justify-content: right; /* Center buttons on smaller screens */
