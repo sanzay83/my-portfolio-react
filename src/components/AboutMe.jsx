@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import "./AboutMe.scss"; // Import CSS for styling
+import "./AboutMe.scss";
 
 const AboutMe = forwardRef((props, ref) => {
   return (
@@ -11,7 +11,7 @@ const AboutMe = forwardRef((props, ref) => {
           <h2>Experience</h2>
           <ul>
             <li>
-              <h3>4+ years</h3>
+              <h3>5+ years</h3>
               <p>Software Development</p>
             </li>
           </ul>
