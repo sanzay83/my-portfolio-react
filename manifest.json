@@ -1,0 +1,9 @@
+{
+  "short_name": "Sanjay's Portfolio",
+  "name": "Sanjay's Portfolio",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
