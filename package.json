@@ -1,5 +1,6 @@
 {
   "name": "my-portfolio",
+  "homepage": "https://sanzay83.github.io/my-portfolio-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
