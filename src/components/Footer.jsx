@@ -1,11 +1,17 @@
-// src/Footer.js
 import React from "react";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
-    <div style={{ paddingBottom: "10px" }}>
-      <h3>Copyright &copy; 2024 Sanjay Duwal. All Rights Reserved.</h3>
-    </div>
+    <footer className="site-footer">
+      <div className="footer-inner">
+        <span className="footer-brand">Sanjay Duwal</span>
+        <span>
+          Designed &amp; built with React · Copyright &copy; {year} · All
+          rights reserved.
+        </span>
+      </div>
+    </footer>
   );
 };
 

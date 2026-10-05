@@ -1,56 +1,91 @@
-$lightcolor: rgb(221, 221, 221);
-$dark-color: rgb(29, 29, 29);
+// ─── Design tokens ──────────────────────────────────────────────
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
 
-body {
-  font-family: "Courier New", monospace;
+  --bg: #f4f6fb;
+  --bg-soft: #ffffff;
+  --surface: rgba(255, 255, 255, 0.75);
+  --surface-solid: #ffffff;
+  --text: #0b1226;
+  --muted: #5b6b8c;
+  --border: rgba(15, 23, 42, 0.09);
+  --accent: #4f46e5;
+  --accent-2: #06b6d4;
+  --gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #06b6d4 100%);
+  --glow: 0 0 60px rgba(99, 102, 241, 0.35);
+  --card-shadow: 0 18px 45px -18px rgba(15, 23, 42, 0.18);
+  --nav-bg: rgba(244, 246, 251, 0.78);
+  --hero-glow-a: rgba(99, 102, 241, 0.16);
+  --hero-glow-b: rgba(6, 182, 212, 0.12);
 }
 
-h1 {
-  font-size: 42px;
-}
-h2 {
-  font-size: 32px;
-}
-h3,
-button {
-  font-size: 25px;
-}
-
-.main-container {
-  padding: 160px 40px 40px 40px;
-  max-width: 1200px;
-  margin: 140px auto 10px;
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 32px;
-  }
-
-  h2 {
-    font-size: 25px;
-  }
-  h3,
-  button {
-    font-size: 18px;
-  }
-
-  .main-container {
-    padding: 30px;
-    max-width: 1200px;
-    margin: auto;
-  }
+:root.dark {
+  --bg: #060a15;
+  --bg-soft: #0a0f1e;
+  --surface: rgba(15, 22, 40, 0.62);
+  --surface-solid: #0d1428;
+  --text: #eef2ff;
+  --muted: #94a3c4;
+  --border: rgba(255, 255, 255, 0.09);
+  --accent: #818cf8;
+  --accent-2: #22d3ee;
+  --card-shadow: 0 18px 45px -18px rgba(0, 0, 0, 0.6);
+  --nav-bg: rgba(6, 10, 21, 0.72);
+  --hero-glow-a: rgba(99, 102, 241, 0.22);
+  --hero-glow-b: rgba(34, 211, 238, 0.14);
 }
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 22px;
+// ─── Shared bits ────────────────────────────────────────────────
+@mixin container {
+  width: min(1140px, 92%);
+  margin: 0 auto;
+}
+
+@mixin section-head {
+  text-align: center;
+  margin-bottom: 3rem;
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.7rem;
   }
-  h2 {
-    font-size: 16px;
+  h2.title {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.6rem;
+    color: var(--text);
   }
-  h3,
-  button {
-    font-size: 14px;
+  p.lead {
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-size: 1.02rem;
   }
+}
+
+@mixin gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin glass-card {
+  background: var(--surface);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--card-shadow);
 }

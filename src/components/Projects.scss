@@ -1,123 +1,128 @@
-.project-cards {
+@import "./main.scss";
+
+.projects-section {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.projects-inner {
+  @include container;
+}
+
+.project-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
 .project-card {
-  margin: 10px;
-  padding: 0px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 30px;
-  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
-  position: relative;
-}
-
-.project-card img {
-  width: 100%;
-  border-radius: 20px;
-}
-
-.project-card a {
-  text-decoration: none;
-  color: black;
-}
-
-.github-button {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  display: flex;
-  align-items: center;
-  padding: 8px 10px;
-  border-radius: 50px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-  transition: 0.35s ease all;
+  @include glass-card;
   overflow: hidden;
-  max-width: 22px; /* icon size */
-  background-color: white;
-}
-
-.demo-button {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
   display: flex;
-  align-items: center;
-  padding: 8px 10px;
-  border-radius: 50px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-  transition: 0.35s ease all;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-shadow), var(--glow);
+  }
+}
+
+.project-media {
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  max-width: 22px;
+  background: var(--bg);
 
-  background-color: white;
-}
-
-.demo-button-label {
-  text-transform: uppercase;
-  white-space: nowrap;
-  padding: 0 8px;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: 0.25s ease all;
-  color: black;
-}
-
-.github-button-label {
-  text-transform: uppercase;
-  white-space: nowrap;
-  padding: 0 8px;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: 0.25s ease all;
-}
-
-.project-card:hover {
-  transform: scale(1.1);
-  transition: all 1s ease-in-out;
-  .demo-button {
-    max-width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .github-button-label {
-    opacity: 1;
-    transform: translateX(0);
-    transition: 0.25s 0.1s ease-in opacity,
-      0.15s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) transform;
-  }
-
-  .github-button {
-    max-width: 100%;
-    text-align: left;
-  }
-
-  .demo-button-label {
-    opacity: 1;
-    transform: translateX(0);
-    transition: 0.25s 0.1s ease-in opacity,
-      0.15s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) transform;
+  .project-card:hover & img {
+    transform: scale(1.06);
   }
 }
 
-.project-card h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+.project-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
 
-.project-card p {
-  font-size: 16px;
-}
+  h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+  }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .project-cards {
-    grid-template-columns: 1fr 1fr;
+  p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    flex: 1;
   }
 }
 
-@media (max-width: 480px) {
-  .project-cards {
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+
+  span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.28rem 0.7rem;
+    border-radius: 999px;
+    background: var(--border);
+    color: var(--muted);
+  }
+}
+
+.project-links {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.4rem;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
+  }
+
+  &.primary {
+    color: #fff;
+    background: var(--gradient);
+    border: none;
+    box-shadow: var(--glow);
+  }
+}
+
+@media (max-width: 980px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .project-grid {
     grid-template-columns: 1fr;
   }
 }

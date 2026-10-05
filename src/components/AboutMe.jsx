@@ -1,54 +1,71 @@
 import React, { forwardRef } from "react";
 import "./AboutMe.scss";
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import { Reveal } from "./Reveal";
 
 const AboutMe = forwardRef((props, ref) => {
   return (
-    <div className="main-container" ref={ref} id={props.id}>
-      <h3>Get to know me</h3>
-      <h1 className="title">About Me</h1>
-      <div className="about-me">
-        <section className="about-me-section">
-          <h2>Experience</h2>
-          <ul>
-            <li>
-              <h3>5+ years</h3>
-              <p>Software Development</p>
-            </li>
-          </ul>
-        </section>
+    <section className="about-section" ref={ref} id={props.id}>
+      <div className="about-inner">
+        <Reveal className="section-head">
+          <span className="eyebrow">Get to know me</span>
+          <h2 className="title">About Me</h2>
+          <p className="lead">
+            A quick snapshot of my background — and the story behind it.
+          </p>
+        </Reveal>
 
-        <section className="about-me-section">
-          <h2>Education</h2>
-          <ul>
-            <li>
-              <h3>Bachelor's of Science in Information Technology</h3>
-              <p>Minnesota State University, Mankato, 2016 - 2019</p>
-            </li>
-          </ul>
-        </section>
-      </div>
-      <div className="about-me">
-        <div className="about-me-text">
-          I am a passionate software engineer with a strong background in web
-          development and a keen interest in solving complex problems. I enjoy
-          working on innovative projects and continuously learning new
-          technologies to stay updated with industry trends. My journey into
-          software engineering began during my time at Minnesota State
-          University, where I pursued a Bachelor of Science in Information
-          Technology degree with a focus on Software Engineering. I've had the
-          privilege of working with industry leaders like John Deere and OATI,
-          where I've honed my skills in Agile methodologies and collaborative
-          development practices. My approach to software engineering is deeply
-          rooted in a commitment to continuous learning and growth. I actively
-          engage in individual development sessions with my team, addressing
-          challenges, and exploring new technologies to stay ahead of industry
-          trends. Whether it's developing responsive UIs with React or
-          architecting scalable Microservices with Spring framework. I bring a
-          blend of technical expertise, leadership experience, and a passion for
-          problem-solving to every project I undertake.
+        <div className="about-grid">
+          <Reveal className="about-cards">
+            <div className="info-card">
+              <span className="info-icon">
+                <FaBriefcase />
+              </span>
+              <h3>Experience</h3>
+              <p className="info-highlight">5+ years</p>
+              <p className="info-sub">Software Development</p>
+            </div>
+            <div className="info-card">
+              <span className="info-icon">
+                <FaGraduationCap />
+              </span>
+              <h3>Education</h3>
+              <p className="info-highlight">
+                B.S. in Information Technology
+              </p>
+              <p className="info-sub">
+                Minnesota State University, Mankato
+                <br />
+                2016 – 2019 · Software Engineering focus
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal className="about-bio" delay={150}>
+            <p>
+              I&rsquo;m a passionate software engineer with a strong background
+              in web development and a keen interest in solving complex
+              problems. I enjoy working on innovative projects and continuously
+              learning new technologies to stay ahead of industry trends.
+            </p>
+            <p>
+              My journey began at Minnesota State University, where I earned a
+              Bachelor of Science in Information Technology with a focus on
+              Software Engineering. Since then I&rsquo;ve had the privilege of
+              working with industry leaders like{" "}
+              <strong>John Deere</strong> and <strong>OATI</strong>, honing my
+              skills in Agile methodologies and collaborative development.
+            </p>
+            <p>
+              Whether it&rsquo;s building responsive UIs with React or
+              architecting scalable microservices with Spring, I bring a blend
+              of technical expertise, leadership experience, and a genuine
+              passion for problem-solving to every project I take on.
+            </p>
+          </Reveal>
         </div>
       </div>
-    </div>
+    </section>
   );
 });
 

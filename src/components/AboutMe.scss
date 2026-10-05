@@ -1,48 +1,104 @@
-.main-container-about-me {
-  padding: 20px;
-  padding-top: 160px;
-  max-width: 1200px;
-  margin: 140px auto 20px;
+@import "./main.scss";
+
+.about-section {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
-.about-me {
-  min-height: fit-content;
-  padding: 20px;
-  margin: 0 auto;
-  display: flex;
+.about-inner {
+  @include container;
+}
+
+.section-head {
+  @include section-head;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 2rem;
-  justify-content: center;
+  align-items: stretch;
 }
 
-.about-me .about-me-text {
-  text-align: justify;
+.about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-.about-me-section {
-  width: 45%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid rgb(107, 107, 107);
-  border-radius: 30px;
-  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
-}
+.info-card {
+  @include glass-card;
+  padding: 1.8rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-.about-me-section h2 {
-  border-bottom: 2px solid #636363;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-}
-
-.about-me-section ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-@media (max-width: 768px) {
-  .about-me {
-    flex-direction: column;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--card-shadow), var(--glow);
   }
-  .about-me-section {
-    width: 90%;
+
+  h3 {
+    margin: 0.8rem 0 0.4rem;
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.82rem;
+  }
+}
+
+.info-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: var(--gradient);
+  color: #fff;
+  font-size: 1.4rem;
+  box-shadow: var(--glow);
+}
+
+.info-highlight {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0.2rem 0;
+  @include gradient-text;
+}
+
+.info-sub {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.97rem;
+}
+
+.about-bio {
+  @include glass-card;
+  padding: 2.2rem;
+  font-size: 1.04rem;
+  line-height: 1.85;
+  color: var(--muted);
+
+  p {
+    margin: 0 0 1.1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
   }
 }

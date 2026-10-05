@@ -1,58 +1,101 @@
-.cards {
+@import "./main.scss";
+
+.skills-inner {
+  @include container;
+}
+
+.skill-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.skill-card {
+  @include glass-card;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin: 0 0 1.5rem;
+    letter-spacing: -0.01em;
+  }
+}
+
+.skill-items {
   display: flex;
-  justify-content: space-between;
-  gap: 50px;
+  flex-direction: column;
+  gap: 1.15rem;
 }
 
-.card {
-  flex: 1;
-  padding: 20px;
-  border-radius: 30px;
-  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
-}
-
-.card h3 {
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.items {
+.skill-item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  gap: 0.45rem;
 }
 
-.item {
-  flex: 1 1 calc(33.333% - 10px);
-  padding: 10px;
-  text-align: left;
-  font-size: 22px;
+.skill-top {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-.icon {
-  cursor: pointer;
-  height: 2rem;
-}
+.skill-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-size: 1.35rem;
+  color: #68a063;
+  flex-shrink: 0;
+  overflow: hidden;
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .cards {
-    flex-direction: column;
-  }
-
-  .icon {
-    height: 1rem;
-    gap: 0px;
-  }
-
-  .item {
-    flex: 1 1 calc(33%);
-    font-size: 16px;
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
   }
 }
 
-@media (max-width: 480px) {
-  .item {
-    font-size: 14px;
+.skill-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.skill-exp {
+  margin-left: auto;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.skill-bar {
+  height: 7px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.skill-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--gradient);
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 820px) {
+  .skill-cards {
+    grid-template-columns: 1fr;
   }
 }

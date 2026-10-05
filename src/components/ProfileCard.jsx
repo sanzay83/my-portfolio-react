@@ -1,45 +1,130 @@
-// src/ProfileCard.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ProfileCard.scss";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import proImage from "../assets/san.JPG";
+import resumePdf from "../assets/resume.pdf";
+import { Reveal } from "./Reveal";
+
+const ROLES = ["Software Engineer", "Full-Stack Developer", "Problem Solver"];
+
+function useTypewriter(words) {
+  const [text, setText] = useState("");
+  useEffect(() => {
+    let word = 0;
+    let char = 0;
+    let deleting = false;
+    let timer;
+    const tick = () => {
+      const current = words[word];
+      if (!deleting) {
+        char += 1;
+        setText(current.slice(0, char));
+        if (char === current.length) {
+          deleting = true;
+          timer = setTimeout(tick, 1600);
+          return;
+        }
+        timer = setTimeout(tick, 70);
+      } else {
+        char -= 1;
+        setText(current.slice(0, char));
+        if (char === 0) {
+          deleting = false;
+          word = (word + 1) % words.length;
+        }
+        timer = setTimeout(tick, 35);
+      }
+    };
+    timer = setTimeout(tick, 500);
+    return () => clearTimeout(timer);
+  }, [words]);
+  return text;
+}
+
+const STATS = [
+  { value: "5+", label: "Years Experience" },
+  { value: "12+", label: "Technologies" },
+  { value: "6", label: "Projects Shipped" },
+];
 
 const ProfileCard = ({ scrollTo }) => {
+  const role = useTypewriter(ROLES);
+
   return (
-    <div className="profile-card">
-      <div className="profile-image">
-        <img src={proImage} alt="Sanjay Duwal" />
+    <section className="hero">
+      <div className="hero-bg" aria-hidden="true" />
+      <div className="hero-inner">
+        <Reveal className="hero-text">
+          <span className="hello-pill">
+            <span className="pulse-dot" />
+            Hello, I&rsquo;m
+          </span>
+          <h1>
+            Sanjay <span className="gradient-text">Duwal</span>
+          </h1>
+          <h2 className="typed-role">
+            {role}
+            <span className="caret" aria-hidden="true" />
+          </h2>
+          <p className="hero-bio">
+            I build fast, scalable web applications and delightful user
+            experiences — from responsive React frontends to robust
+            microservices.
+          </p>
+          <div className="hero-ctas">
+            <a
+              href={resumePdf}
+              className="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download CV
+            </a>
+            <button className="btn btn-ghost" onClick={() => scrollTo("contact")}>
+              Contact Info
+            </button>
+          </div>
+          <div className="hero-socials">
+            <a
+              href="https://www.linkedin.com/in/sanjay-d-a69764150/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://github.com/sanzay83"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+          </div>
+        </Reveal>
+
+        <Reveal className="hero-visual" delay={150}>
+          <div className="portrait-wrap">
+            <div className="portrait-ring">
+              <img src={proImage} alt="Sanjay Duwal" />
+            </div>
+            <span className="float-chip chip-a">⚛️ React</span>
+            <span className="float-chip chip-b">☕ Java</span>
+            <span className="float-chip chip-c">5+ yrs</span>
+          </div>
+        </Reveal>
       </div>
-      <div className="profile-text">
-        <h2>Hello, I'm</h2>
-        <h1>Sanjay Duwal</h1>
-        <h3>Software Engineer</h3>
-        <div className="buttons">
-          <a href="https://sanjayduwal.com/assets/resume.pdf">
-            <button>Download CV</button>
-          </a>
-          <button onClick={() => scrollTo("contactSection")}>
-            Contact Info
-          </button>
-        </div>
-        <div className="social-icons">
-          <a
-            href="https://www.linkedin.com/in/sanjay-d-a69764150/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://github.com/sanzay83"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub />
-          </a>
-        </div>
-      </div>
-    </div>
+
+      <Reveal className="hero-stats" delay={250}>
+        {STATS.map((s) => (
+          <div className="stat" key={s.label}>
+            <span className="stat-value">{s.value}</span>
+            <span className="stat-label">{s.label}</span>
+          </div>
+        ))}
+      </Reveal>
+    </section>
   );
 };
 
