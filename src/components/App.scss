@@ -7,13 +7,13 @@
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Thin gradient scroll-progress bar */
+/* Thin solid scroll-progress bar */
 .scroll-progress {
   position: fixed;
   top: 0;
   left: 0;
   height: 3px;
-  background: var(--gradient);
+  background: var(--accent-solid);
   z-index: 200;
   transition: width 0.1s linear;
 }
@@ -65,9 +65,8 @@
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1rem;
-  color: #fff;
-  background: var(--gradient);
-  box-shadow: var(--glow);
+  color: var(--on-accent);
+  background: var(--accent-solid);
   flex-shrink: 0;
 }
 
@@ -171,10 +170,10 @@ main section {
   cursor: pointer;
   display: grid;
   place-items: center;
-  color: #fff;
+  color: var(--on-accent);
   font-size: 1.05rem;
-  background: var(--gradient);
-  box-shadow: var(--glow);
+  background: var(--accent-solid);
+  box-shadow: var(--card-shadow);
   z-index: 90;
   transition: transform 0.25s ease;
   animation: avatar-in 0.3s ease;

@@ -11,11 +11,10 @@ const Contact = forwardRef((props, ref) => {
       <div className="contact-inner">
         <Reveal>
           <div className="contact-card">
-            <div className="contact-card-glow" aria-hidden="true" />
             <span className="eyebrow">Get in touch</span>
             <h2 className="title">
               Let&rsquo;s build something{" "}
-              <span className="gradient-text">great</span> together
+              <span className="accent-text">great</span> together
             </h2>
             <p className="lead">
               Have a project in mind, a role to fill, or just want to say

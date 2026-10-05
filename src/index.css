@@ -20,7 +20,7 @@ body {
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.35);
+  background: var(--accent-soft);
 }
 
 ::-webkit-scrollbar {
@@ -30,7 +30,7 @@ body {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #6366f1, #22d3ee);
+  background: var(--accent-solid);
   border-radius: 8px;
 }
 

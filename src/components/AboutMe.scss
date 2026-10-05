@@ -35,7 +35,7 @@
 
   &:hover {
     transform: translateY(-6px);
-    box-shadow: var(--card-shadow), var(--glow);
+    box-shadow: var(--card-shadow);
   }
 
   h3 {
@@ -54,11 +54,10 @@
   place-items: center;
   width: 56px;
   height: 56px;
-  border-radius: 18px;
-  background: var(--gradient);
-  color: #fff;
+  border-radius: 16px;
+  background: var(--accent-solid);
+  color: var(--on-accent);
   font-size: 1.4rem;
-  box-shadow: var(--glow);
 }
 
 .info-highlight {
@@ -66,7 +65,7 @@
   font-size: 1.35rem;
   font-weight: 700;
   margin: 0.2rem 0;
-  @include gradient-text;
+  @include accent-text;
 }
 
 .info-sub {

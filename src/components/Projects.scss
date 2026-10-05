@@ -25,7 +25,8 @@
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: var(--card-shadow), var(--glow);
+    box-shadow: var(--card-shadow);
+    border-color: var(--accent-solid);
   }
 }
 
@@ -108,10 +109,9 @@
   }
 
   &.primary {
-    color: #fff;
-    background: var(--gradient);
+    color: var(--on-accent);
+    background: var(--accent-solid);
     border: none;
-    box-shadow: var(--glow);
   }
 }
 

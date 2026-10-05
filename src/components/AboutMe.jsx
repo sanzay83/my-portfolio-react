@@ -22,7 +22,7 @@ const AboutMe = forwardRef((props, ref) => {
                 <FaBriefcase />
               </span>
               <h3>Experience</h3>
-              <p className="info-highlight">5+ years</p>
+              <p className="info-highlight">10+ years</p>
               <p className="info-sub">Software Development</p>
             </div>
             <div className="info-card">

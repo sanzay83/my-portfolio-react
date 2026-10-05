@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./ProfileCard.scss";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import proImage from "../assets/san.JPG";
-import resumePdf from "../assets/resume.pdf";
 import { Reveal } from "./Reveal";
 
 const ROLES = ["Software Engineer", "Full-Stack Developer", "Problem Solver"];
@@ -42,7 +41,7 @@ function useTypewriter(words) {
 }
 
 const STATS = [
-  { value: "5+", label: "Years Experience" },
+  { value: "10+", label: "Years Experience" },
   { value: "12+", label: "Technologies" },
   { value: "6", label: "Projects Shipped" },
 ];
@@ -60,7 +59,7 @@ const ProfileCard = ({ scrollTo }) => {
             Hello, I&rsquo;m
           </span>
           <h1>
-            Sanjay <span className="gradient-text">Duwal</span>
+            Sanjay <span className="accent-text">Duwal</span>
           </h1>
           <h2 className="typed-role">
             {role}
@@ -72,16 +71,17 @@ const ProfileCard = ({ scrollTo }) => {
             microservices.
           </p>
           <div className="hero-ctas">
-            <a
-              href={resumePdf}
+            <button
               className="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() => scrollTo("contact")}
             >
-              Download CV
-            </a>
-            <button className="btn btn-ghost" onClick={() => scrollTo("contact")}>
               Contact Info
+            </button>
+            <button
+              className="btn btn-ghost"
+              onClick={() => scrollTo("projects")}
+            >
+              View Projects
             </button>
           </div>
           <div className="hero-socials">
@@ -111,7 +111,7 @@ const ProfileCard = ({ scrollTo }) => {
             </div>
             <span className="float-chip chip-a">⚛️ React</span>
             <span className="float-chip chip-b">☕ Java</span>
-            <span className="float-chip chip-c">5+ yrs</span>
+            <span className="float-chip chip-c">10+ yrs</span>
           </div>
         </Reveal>
       </div>
