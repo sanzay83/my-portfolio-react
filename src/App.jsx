@@ -4,7 +4,6 @@ import Footer from "./components/Footer";
 import ProfileCard from "./components/ProfileCard";
 import AboutMe from "./components/AboutMe";
 import TechStacks from "./components/TechStacks";
-import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import proImage from "./assets/san.JPG";
 import {
@@ -18,7 +17,6 @@ import {
 const NAV_LINKS = [
   { key: "about", label: "About" },
   { key: "skills", label: "Skills" },
-  { key: "projects", label: "Projects" },
   { key: "contact", label: "Contact" },
 ];
 
@@ -48,7 +46,6 @@ function App() {
   const sectionRefs = {
     about: useRef(null),
     skills: useRef(null),
-    projects: useRef(null),
     contact: useRef(null),
   };
 
@@ -120,7 +117,6 @@ function App() {
         <ProfileCard scrollTo={scrollTo} />
         <AboutMe id="about" ref={sectionRefs.about} />
         <TechStacks id="skills" ref={sectionRefs.skills} />
-        <Projects id="projects" ref={sectionRefs.projects} />
         <Contact id="contact" ref={sectionRefs.contact} />
       </main>
 

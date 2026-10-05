@@ -43,7 +43,6 @@ function useTypewriter(words) {
 const STATS = [
   { value: "10+", label: "Years Experience" },
   { value: "12+", label: "Technologies" },
-  { value: "6", label: "Projects Shipped" },
 ];
 
 const ProfileCard = ({ scrollTo }) => {
@@ -79,9 +78,9 @@ const ProfileCard = ({ scrollTo }) => {
             </button>
             <button
               className="btn btn-ghost"
-              onClick={() => scrollTo("projects")}
+              onClick={() => scrollTo("about")}
             >
-              View Projects
+              About Me
             </button>
           </div>
           <div className="hero-socials">
